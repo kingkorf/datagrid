@@ -1,0 +1,23 @@
+{
+    "name": "abbert/datagrid",
+    "description": "php datagrid lib",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Albert Bakker",
+            "email": "hello@abbert.nl"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "v2.6.3"
+    },
+    "require-dev": {
+        "doctrine/orm": "2.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+          "Abbert\\Datagrid\\": "src",
+          "App\\": "tests/web/app"
+        }
+    }
+}

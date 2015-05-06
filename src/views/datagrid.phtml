@@ -1,0 +1,44 @@
+<table id="<?=$this->getId()?>" class="table table-striped" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <?php foreach ($this->getColumns() as $column): ?>
+            <th>
+                <?php if (!$column->getOption('hideName')): ?>
+                    <?=$column->getName()?>
+                <?php endif ?>
+            </th>
+        <?php endforeach ?>
+    </tr>
+    </thead>
+
+    <tfoot>
+    <tr>
+        <?php foreach ($this->getColumns() as $column): ?>
+            <th>
+                <?php if (!$column->getOption('hideName')): ?>
+                    <?=$column->getName()?>
+                <?php endif ?>
+            </th>
+        <?php endforeach ?>
+    </tr>
+    </tfoot>
+</table>
+
+<script>
+    var table = $('#<?=$this->getId()?>').dataTable({
+        stateSave: true,
+        columns: [
+            <?php foreach ($this->getColumns() as $key => $column): ?>
+                <?=$key != 0 ? ',' : ''?>{data: "<?=$column->getName()?>"}
+            <?php endforeach ?>
+        ],
+        ajax: {
+            url: "",
+            data: function (d) {
+                d.datagrid = '<?=$this->getId()?>'
+            }
+        },
+        processing: true,
+        serverSide: true
+    });
+</script>
