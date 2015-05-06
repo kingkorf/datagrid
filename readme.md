@@ -43,10 +43,13 @@ See LICENSE
 
 ## Contributing
 
-1. clone the project
-2. run `composer install`
-3. edit tests/web/app/config/db.php
-4. cd to tests/web 
-5. run `../vendor/bin/doctrine orm:schema-tool:update`
-6. run `php -S 0:3000` in tests/web/public 
-7. navigate to http://localhost:3000.
+1. Fork the project
+2. Clone the repository
+3. Run `composer install`
+4. Edit tests/web/app/config/db.php
+5. Go to to tests/web 
+6. Run `../vendor/bin/doctrine orm:schema-tool:update`
+7. Run `php -S 0:3000` in tests/web/public 
+8. Navigate to http://localhost:3000
+9. Make your changes
+10. Create a pull-request
